@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>割引計算</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head> 
+  <body>
+    <header>
+      <h1>割引額簡単計算ツール</h1>
+      <p>割引額の計算方法なんだっけ？電卓に打ち込むのがめんどくさい…</p>
+      <p>そんなあなたのためのツールです</p>
+    </header>
+    <main>
+      <div class="container">
+        <div class="input-area">
+          <label>税込金額： <input type="text" id="id_price" placeholder="単位不要"></label>
+          <label>割引％： <input type="text" id="id_percent" placeholder="単位不要"></label>
+          <button id="button" onclick="total();discount()">計算</button>
+          <div id="result"></div>
+        </div>
+        <script>
+          const price = document.getElementById("id_price")
+          const percent = document.getElementById("id_percent")
+          const result = document.getElementById("result")
+          function total() { result.innerHTML = "支払金額は" + Number(id_price.value) * (1 - (Number(id_percent.value) * 0.01)) + "円です"}
+        </script>
+      </div>
+    </main>
+    <footer>
+      <p>F.U</p>
+      <p><a href="https://w.atwiki.jp/ptps/">外部web</a></p>
+      <p><a href="https://www.youtube.com/@Noiz3o3">YouTube</a></p>
+    </footer>
+  </body>
+</html>
