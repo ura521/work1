@@ -1,36 +1,46 @@
 <!DOCTYPE HTML>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <title>割引計算</title>
-    <link rel="stylesheet" href="https://ura521.github.io/work1/styles.css">
-  </head> 
-  <body>
-    <header>
-      <h1>割引額簡単計算ツール</h1>
-      <p>割引額の計算方法なんだっけ？電卓に打ち込むのがめんどくさい…</p>
-      <p>そんなあなたのためのツール</p>
-    </header>
-    <main>
-      <div class="container">
-        <div class="input-area">
-          <label>税込金額： <input type="text" id="id_price" placeholder="単位不要"></label>
-          <label>割引％： <input type="text" id="id_percent" placeholder="単位不要"></label>
-          <button id="button" onclick="total();discount()">計算</button>
-          <div id="result"></div>
-        </div>
-        <script>
-          const price = document.getElementById("id_price")
-          const percent = document.getElementById("id_percent")
-          const result = document.getElementById("result")
-          function total() { result.innerHTML = "支払金額は" + Number(id_price.value) * (1 - (Number(id_percent.value) * 0.01)) + "円です"}
-        </script>
-      </div>
-    </main>
-    <footer>
-      <p>F.U</p>
-      <p><a href="https://w.atwiki.jp/ptps/">外部web</a></p>
-      <p><a href="https://www.youtube.com/@Noiz3o3">YouTube</a></p>
-    </footer>
-  </body>
+    <head>
+        <meta charset="utf-8">
+        <title>割引計算</title>
+        <link rel="stylesheet" href="https://ura521.github.io/work1/styles.css">
+    </head> 
+    <body>
+        <header>
+            <h1>割引額簡単計算ツール</h1>
+            <p>割引額の計算方法なんだっけ？電卓に打ち込むのがめんどくさい…</p>
+            <p>そんな人のためのツール</p>
+        </header>
+        <main>
+            <div class="container">
+                <div class="input-area">
+                    <label>税込金額： <input type="text" id="id_price" placeholder="(例)10000" maxlength="7"></label>
+                    <label>割引％： <input type="text" id="id_percent" placeholder="(例)20" maxlength="2"></label>
+                    <button id="button" onclick="total()">計算</button>
+                    <div id="result"></div>
+                </div>
+                <script>
+                    const price = document.getElementById("id_price")
+                    const percent = document.getElementById("id_percent")
+                    const result = document.getElementById("result")
+                    function total() { 
+                      result.innerHTML = "割引後の金額は" + Math.ceil(Number(id_price.value) * (1 - (Number(id_percent.value) * 0.01))) + "円です。" + Math.floor((Number(id_price.value) - Number(id_price.value) * (1 - Number(id_percent.value) * 0.01))) + "円お得!"
+                    } 
+                </script>
+            </div>
+            <div class="how_to">
+              <h2>使い方</h2>
+              <p>「税込金額」「割引％」の欄に、それぞれ<strong>半角で</strong>数字を打ち込みます。<br>この際、数字に単位(円)やカンマ(,)は不要です。</p>
+              <p>それぞれ数字を打ち込んだら「計算」ボタンを押します。<br>中央のフォームに割引後の金額とお得になった金額が表示されます。</p>
+              <div class="note">
+                <p>割引後の金額は1円未満を切り上げ、お得になった金額は1円未満を切り捨てしています。</p>
+                <p>現在、計算できる税込金額は7桁までとなっております。</p>
+              </div>
+            </div>
+        </main>
+        <footer>
+            <p>Fuya</p>
+            <p><a href="https://w.atwiki.jp/ptps/">Webpage</a>｜<a href="https://www.youtube.com/@Noiz3o3">YouTube</a></p>
+        </footer>
+    </body>
 </html>
