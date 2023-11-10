@@ -38,18 +38,32 @@ p {
 }
 
 #button {
-    width: 50px;
-    height: 30px;
+    width: 55px;
+    height: 35px;
 }
 
 #result {
-    width: 500px;
-    height: 150px;
+    width: 520px;
+    height: 100px;
     border: none;
     border-radius: 5px;
     margin-top: 18px;
     background-color: white;
-    font-size: 40px;
+    font-size: 23px;
     text-align: center;
-    line-height: 150px;
+    line-height: 100px;
+}
+
+.how_to {
+    padding: 3px;
+    text-align: center;
+}
+
+footer {
+    margin-top: 30px;
+}
+
+.note {
+    font-size: 13px;
+    text-decoration: underline;
 }
